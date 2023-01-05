@@ -15,6 +15,8 @@
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>17</java.version>
+		<maven.compler.source>17</maven.compler.source>
+		<maven.compler.target>17</maven.compler.target>
 	</properties>
 	<dependencies>
 		<dependency>
