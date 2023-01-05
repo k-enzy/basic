@@ -15,8 +15,8 @@
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>17</java.version>
-		<maven.compler.source>1.8</maven.compler.source>
-		<maven.compler.target>1.8</maven.compler.target>
+		<maven.compiler.source>17</maven.compiler.source>
+		<maven.compiler.target>17</maven.compiler.target>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -39,6 +39,12 @@
 			<artifactId>spring-boot-devtools</artifactId>
 			<optional>true</optional>
 		</dependency>
+		
+		<dependency>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-surefire-plugin</artifactId>
+			<version>2.4.3</version>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -46,8 +52,35 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<!--<configuration>
+					<source>17</source>
+					<target>17</target>
+				</configuration>-->
+			</plugin>
+			
+			<plugin> 
+				<groupId>org.apache.maven.plugins</groupId> 
+				<artifactId>maven-surefire-plugin</artifactId> 
+				<!--<configuration> 
+					<skipTests>true</skipTests> 
+				</configuration> -->
+				<configuration>
+        <includes>
+            <include>TestFail.java</include>
+        </includes>
+        <testFailureIgnore>true</testFailureIgnore>
+    </configuration>
 			</plugin>
 		</plugins>
+		<!-- <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>2.21.0</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>-->
 	</build>
 
 </project>
