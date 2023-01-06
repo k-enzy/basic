@@ -1,17 +1,15 @@
-package co.ddiddi.basic;
+package co.ddiddi.basic.test;
 
-import static org.junit.Assert.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class BasicApplicationTests {
+public class basicTest {
 
 	@Test
-	void contextLoads() {
+	public void basicTest() throws Exception{
 		assertEquals("", "");
 	}
-
 }
